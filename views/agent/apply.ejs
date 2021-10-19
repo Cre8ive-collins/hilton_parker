@@ -108,7 +108,7 @@
                         <label for="other" class="form-control-label">O-Level Result  </label>
                     </div>
                     <div class="input-group mb-4">
-                        <input type="file"    class="form-control" name="waec" required>
+                        <input type="file" class="form-control" name="waec" required>
                     </div>
                 </div>
             </div>
@@ -191,10 +191,10 @@
 
     <!-- END BSC DOCUMENTS  -->
 
-                    <% } %>
-                        
-                    <% if (user.program == 'msc') { %>
-                        <!-- MSC DOCUMENTS -->
+    <% } %>
+        
+    <% if (user.program == 'msc') { %>
+        <!-- MSC DOCUMENTS -->
 <form action="/agent/submit/msc/<%= user.id %>" method="POST" enctype="multipart/form-data">
     <div class="row" id="pgd">
         <div class="text-center color"> <h5>MSC required documents</h5> 
@@ -267,11 +267,25 @@
                 </div>
             </div>
         </div>
+
         <div class="col-md-4 col-12">
             <div class="input-field choice">
                 <div>
                     <div class="input-group mb-4">
-                        <label for="other" class="form-control-label">Other Document </label>
+                        <label for="other" class="form-control-label">Language Proficiency Certificate/result </label>
+                    </div>
+                    <div class="input-group mb-4">
+                        <input type="file" class="form-control" name="Lang Proficiency Cert">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-12">
+            <div class="input-field choice">
+                <div>
+                    <div class="input-group mb-4">
+                        <label for="other" class="form-control-label">Other Document</label>
                     </div>
                     <div class="input-group mb-4">
                         <input type="file" class="form-control" name="other">

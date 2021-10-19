@@ -39,11 +39,12 @@ function agentsuserupload() {
         {name: 'transcript', maxCount: 1},
         {name: 'passport', maxCount: 1},
         {name: 'intent', maxCount: 1},
+        {name: 'Lang Proficiency Cert', maxCount: 1},
         {name: 'other', maxCount: 1}
     ])
 
 
-    route.post('/msc/:id',mscfilesupload,  (req, res) => 
+    route.post('/msc/:id',mscfilesupload,  (req, res) =>        
     {
         const id = req.params.id
         const feilds = Object.values(req.body)
@@ -112,6 +113,7 @@ function agentsuserupload() {
         {name: 'bsc', maxCount: 1},
         {name: 'passport', maxCount: 1},
         {name: 'other', maxCount: 1}
+
     ])
     route.post('/pgd/:id' , pgdfilesupload,(req,res) => {
         const id = req.params.id

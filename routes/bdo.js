@@ -51,8 +51,8 @@ function bdo(){
                            let sql = `SELECT * FROM agent WHERE agofficer = ${agentofficer[0].id}`  
                            for(var i = 1; i < agentofficer.length;){
                                sql += " OR agofficer = "+agentofficer[i].id+""
-                                i++;
-                           }
+                               i++;
+                            }
                            con.query(sql, (err, agents) => {
                                let leadsSql = `SELECT * FROM leads WHERE agent_id = '${agents[0].agent_id}'`
                                for(var i = 1; i < agents.length;){

@@ -6,22 +6,22 @@ require('dotenv').config()
 // SMS BALLANCE MAIL 
 async function smsStatus(response) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
         port: 587,
         secure: false,
         auth: {
-            user: 'collinswilson@softnoonng.com', 
+            user: 'support@hiltonparkerng.com', 
             pass: process.env.MAIL_PASSWORD
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
-        to: 'wilsoncollins44@yahoo.com',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
+        to: 'support@hiltonparkerng.com',
         subject:`SMS STATUS`,
         body: `${response}`
     });
@@ -31,21 +31,21 @@ async function smsStatus(response) {
 //  NEW CLIENT FROM AGENT 
 async function newAgentLead(params, agent) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparker.com",
         tls:{
             rejectUnauthorized: false
         },
         port: 587,
         secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com',
+            user: 'support@hiltonparkerng.com',
             pass: process.env.MAIL_PASSWORD 
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
         to: params.accountofficer,
         subject:`New Application`,
         html: `
@@ -131,21 +131,21 @@ async function newAgentLead(params, agent) {
 // ADMIN MAILER
 async function newLead(admin, params,) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+       host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com',
+            user: 'support@hiltonparkerng.com',
             pass: process.env.MAIL_PASSWORD 
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
         to: `${admin.email}`,
         subject:`Application Mail`,
         html: `
@@ -314,21 +314,21 @@ async function newLead(admin, params,) {
 // CLIENT MAILER
 async function applied(params) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com', 
-            pass: process.env.MAIL_PASSWORD
+            user: 'support@hiltonparkerng.com',
+            pass: process.env.MAIL_PASSWORD 
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
         to: `${params.email}`,
         subject:`Complete Your Application`,
         html: `
@@ -513,21 +513,21 @@ async function applied(params) {
 // CLIENT INVITATION MAILER
 async function Invitation(params, startdate, enddate) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com', 
-            pass: process.env.MAIL_PASSWORD
+            user: 'support@hiltonparkerng.com',
+            pass: process.env.MAIL_PASSWORD 
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
         to: `${params.email}`,
         subject:`Invitation Mail`,
         html: `
@@ -696,26 +696,24 @@ async function Invitation(params, startdate, enddate) {
 } 
 
 
-
-
 // FORGOT PASSWORD MAILER
 async function forgot_password(result, mail,token) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com', 
+            user: 'support@hiltonparkerng.com', 
             pass: process.env.MAIL_PASSWORD
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
         to: `${mail}`,
         subject:`Password reset mail`,
         html: `
@@ -898,26 +896,24 @@ async function forgot_password(result, mail,token) {
 
 }
 
-
-
 // document upload
 async function document_upload(user, accountofficer) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com', 
+            user: 'support@hiltonparkerng.com', 
             pass: process.env.MAIL_PASSWORD
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
         to: `${accountofficer.email}`,
         subject: `Document Upload Mail`,
 
@@ -1102,27 +1098,25 @@ async function document_upload(user, accountofficer) {
 
 }
 
-
-
 // CONTACT US MAILER
 async function contact(details) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com',
+             user: 'support@hiltonparkerng.com', 
             pass: process.env.MAIL_PASSWORD 
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
-        to: 'collinswilson@softnoonng.com', 
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
+        to: 'support@hiltonparkerng.com', 
         subject: 'Contact Form',
         html: `
                         
@@ -1290,28 +1284,24 @@ async function contact(details) {
 
 }
 
-
-
-
-
 // AGENT registration MAILER
 async function agent(params,encryptedid ) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com', 
+            user: 'support@hiltonparkerng.com', 
             pass: process.env.MAIL_PASSWORD
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
         to: `${params.email}`,
         subject:`Complete Your Registration`,
         html: `                       
@@ -1496,21 +1486,21 @@ async function agent(params,encryptedid ) {
 // AGENT MAILER AFTER REQUIRED INFO IS SUBMITTED
 async function received(params ) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com', 
+            user: 'support@hiltonparkerng.com', 
             pass: process.env.MAIL_PASSWORD
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
         to: `${params.email}`,
         subject:`Application Received`,
         html: `                       
@@ -1675,21 +1665,21 @@ async function received(params ) {
 // agent registration mailer for agent
 async function agentofficer(params, accountOfficer) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com',
+            user: 'support@hiltonparkerng.com',
             pass: process.env.MAIL_PASSWORD 
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
         to: 'collinswilson@softnoonng.com',
         subject:`Agent Application Mail`,
         html: `
@@ -1857,26 +1847,24 @@ async function agentofficer(params, accountOfficer) {
 
 }
 
-
-
 // AGENT RESET PASSSWORD MAILER
 async function agent_reset_password(encryptedid, mail,token) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
+        port: 465,
         secure: false,
         auth: {
-            user: 'collinswilson@softnoonng.com', 
+            user: 'support@hiltonparkerng.com', 
             pass: process.env.MAIL_PASSWORD
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
         to: `${mail}`,
         subject:`Password reset mail`,
         html: `
@@ -2062,21 +2050,21 @@ async function agent_reset_password(encryptedid, mail,token) {
 // APPLICATION VERIFIED
 async function verified(agent) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com', 
+            user: 'support@hiltonparkerng.com', 
             pass: process.env.MAIL_PASSWORD
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
         to: `${agent[0].email}`,
         subject:`Application Verified`,
         html: `
@@ -2260,22 +2248,22 @@ async function verified(agent) {
 // admin notification mail for agent application
 async function notify(lead, mail) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com',
+            user: 'support@hiltonparkerng.com',
             pass: process.env.MAIL_PASSWORD 
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
-        to: mail,
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
+        to: `${mail}`,
         subject:`Agent Application Mail`,
         html: `
             <!doctype html>
@@ -2442,22 +2430,22 @@ async function notify(lead, mail) {
 // landing page conatct us mailer
 async function contactus(msg) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com',
+            user: 'support@hiltonparkerng.com',
             pass: process.env.MAIL_PASSWORD 
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
-        to: 'collinswilson@softnoonng.com', 
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
+        to: 'support@hiltonparkerng.com', 
         subject: 'Contact us form',
         html: `        
             <!doctype html>
@@ -2625,21 +2613,21 @@ async function contactus(msg) {
 // APPLICATION VERIFICATION MAIL FOR USER
 async function application_verified(output) {
     let transporter = nodemailer.createTransport(smtpTransport({
-        host: "webmail.softnoonng.com",
+        host: "mail.hiltonparkerng.com",
         tls:{
             rejectUnauthorized: false
         },
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
-            user: 'collinswilson@softnoonng.com', 
+            user: 'support@hiltonparkerng.com', 
             pass: process.env.MAIL_PASSWORD
         },
     }));
 
 
     let info = await transporter.sendMail({
-        from: '"Hilton Parker Services" <collinswilson@softnoonng.com>',
+        from: '"Hilton Parker Services" <support@hiltonparkerng.com>',
         to: `${output[0].email}`,
         subject:`Application Verified`,
         html: `

@@ -136,7 +136,8 @@
                                         <tr>
                                           <td>Name</td>
                                           <td>Phone number</td>  
-                                          <td>Status</td>    
+                                          <td>Status</td>
+                                          <td>Agent_id</td>        
                                         </tr>
                                     </thead>
                                     <%
@@ -166,6 +167,7 @@
                                                 <span class="status <%=data.status %>"></span>
                                                 <%=data.status %>
                                             </td>
+                                            <td><%=data.agent_id %></td>
                                         </tr>
                                     </tbody>
                                     <%  i++; }) %>

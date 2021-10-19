@@ -305,7 +305,9 @@ function admin() {
                         userList
                     })
                 }else{
-                    res.render('error')
+                    res.render('./admin/applicants', {
+                        userList
+                    })
                 }
             })
         })
@@ -497,6 +499,7 @@ function admin() {
 
 
 
+
     route.get('/clientdetails/:id', (req, res, next,) => {
         if (req.cookies.authenticate){
             req.user = jwt.verify(req.cookies.authenticate, process.env.TOKEN_SECRET)
@@ -511,6 +514,7 @@ function admin() {
         fs.readdir(directory, (err, files) => {
             const doc = []
             files.forEach(file => {
+              console.log(file)  
               doc.push(file)
             })
 
@@ -534,7 +538,9 @@ function admin() {
                             })
                         }else{
                             res.render('./admin/clientsdetails', {
-                                resp
+                                resp,
+                                files: entries
+
                             })
                         }
                     })
@@ -544,6 +550,8 @@ function admin() {
 
         
     })
+
+
 
 
 
@@ -587,11 +595,7 @@ function admin() {
         })
  
     } )
-
-
-    
        
-        
     return route
 }
 

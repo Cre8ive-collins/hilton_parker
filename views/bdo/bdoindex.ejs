@@ -30,9 +30,9 @@
                     <a class="active" href="#"><span><i class="fas fa-user-check"></i></span> <span>Dashboard</span></a>
                 </li>
 
-                <li>
+                <!-- <li>
                     <a  href="/admin/details"><span><i class="fas fa-user-edit"></i></span> <span>Agent</span></a>
-                </li>
+                </li> -->
 
                 <li>
                     <a href="/bdo/logout"  title="Logout"><span><i class="fas fa-sign-out-alt"></i>   </span> <span>Logout</span></a>
@@ -104,7 +104,6 @@
                             <div><span>Leads</span></div>
                         </div>
                         <div>
-                          <!-- <span><i class="fas fa-user-check"></i></span>   -->
                         </div>
                     </a>
                 </div>
@@ -137,7 +136,7 @@
                                             <th scope="col">LastName</th>
                                             <th scope="col">Phone Number</th>
                                             <th scope="col">Email</th>
-                                            <!-- <th scope="col">OP</th> -->
+                                            <th scope="col">AG-OFFICER_ID</th>
                                         </tr>
                                     </thead>
                                     <%
@@ -151,6 +150,7 @@
                                             <td><%= data.lastname %></td>
                                             <td><%=data.phonenumber %></td>
                                             <td><%=data.email %></td>
+                                            <td><%=data.id %></td>
                                         </tr>
                                     </tbody>
                                     <%  i++; }) %>

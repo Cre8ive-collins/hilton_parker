@@ -52,7 +52,7 @@
             <div class="user-wrapper">
                 <small>Welcome</small>
                 <div>
-                    <small>Collins</small>
+                    <small><%= currentBdo[0].firstname %> <%= currentBdo[0].lastname %> </small>
                 </div>
             </div>
         </header>
@@ -71,11 +71,13 @@
                     <thead style="background-color: #f69617;">
                         
                         <tr style="color:#fff;">
-                            <th>Name</th>
+                            <th class="col-md-2">Name</th>
                             <th class="col-md-2">Email</th>
                             <th class="col-md-2">Phone Number</th>
                             <th class="col-md-2">Status</th>
                             <th class="col-md-2">No of leads</th>
+                            <th class="col-md-2">AG/O ID</th>
+
                         </tr>
                     </thead>
 
@@ -90,7 +92,9 @@
                             <td class="highlight"><%=data.email %></td>
                             <td><%=data.phonenumber %></td>
                             <td><%=data.status %></td>
-                            <td><a href="/admin/clientdetails/<%=data.id %>"><%=data.leads %></a></td>
+                            <td><%=data.leads %></td>
+                            <td><%=data.agofficer %></td>
+
           
                         </tr>
                     </tbody>
